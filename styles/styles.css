@@ -80,3 +80,67 @@
    
     border: 2px solid #16E9E5;
   }
+  .shadow-img{
+    filter: drop-shadow(0 0 0.35rem #fff)!important;
+  
+  }
+  .fixed-bottom /* position fixed Bottom */{position:fixed;bottom:0px;top:auto;}
+   
+  body {  background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  /* Add the blur effect */
+  
+    background-repeat: no-repeat;  
+  transition: all 0.5s;
+  } 
+  
+  #subscribe{ 
+    background-image: linear-gradient(to left, #FFF , #FFF);
+    color: #000; 
+    transition: all 0.5s ;
+  
+  }
+  
+  #subscribe:hover{ 
+    background-color: #16E9E5;
+    animation-name: example;
+    animation-duration: 1s;
+    color: #16E9E5; 
+  }   
+   
+  
+  @keyframes example {
+    0%   {background-color: #0093E9;}
+    25%  {background-color: #80D0C7;}
+    50%  {background-color: #5ee6e8;}
+    100% {background-color: #16E9E5;}
+  }
+  
+  
+  
+  @-webkit-keyframes rotating {
+    from{
+    -webkit-transform: rotate(0deg);
+    }
+    to{
+    -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  .rotating {
+    -webkit-animation: rotating 6s linear infinite;
+  }
+  
+  .text-dbeats {
+    color: #000; 
+  
+  }
+  
+  
+  .text-dbeats:hover{
+    color: #16E9E5; 
+  
+  }
+  
+  
