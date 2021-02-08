@@ -101,3 +101,384 @@
         }
     </style>
 </head>
+
+
+<body background-image="https://www.geeksforgeeks.org/wp-content/uploads/jquery-banner-768x256.png">
+    <div class="section"></div>
+    <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light transparent" style="box-shadow: none;">
+        <a class="navbar-brand" href="#"><img src="img/DBeatsVert.png" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <span class="mx-4 nav-link" id="compoundrates"></span>
+                </li>
+                <li class="nav-item d-none">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown d-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu d-none" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item d-none">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+
+            <div class="md-form active-purple active-purple-2  ">
+                <input class="form-control d-none" type="text" placeholder="Search" aria-label="Search">
+            </div>
+        </div>
+    </nav>
+    <!--<div class="card container connectionCard " style="width: 200px;height:100px;">
+        <p class="  text-center   gont subscribeText">connect with </p>
+        <div class="text-center">
+            <img class=" mx-3 text-center  metamaskButton zoom" src="img/metamask-fox.svg" alt="Metamask Wallet"
+                height="45" width="45" />
+            <img class=" mx-3 text-center  portisButton zoom" src="img/portis.svg" alt="Portis by Shapeshift"
+                height="45" width="45" />
+        </div>
+        <p class=" gont connectedMeta mx-3"
+            style="display: none;transition: all 0.5s linear;  text-shadow: 0.5px 0.5px 0.1rem #000; ">connected <img
+                class=" m-1 text-center  metamaskButton zoom" src="img/metamask-fox.svg" alt="Metamask Wallet"
+                height="45" width="45" /></p>
+        <p class="    gont connectedPortis mx-3"
+            style="display: none; transition: all 0.5s linear;  text-shadow: 0.5px 0.5px 0.1rem #000;">connected <img
+                class=" m-1 text-center  portisButton zoom" src="img/portis.svg" alt="Portis by Shapeshift" height="45"
+                width="45" /></p>
+    </div>-->
+
+    <p class="account text-center  mt-3" style="display: none;">Account: <span class="showAccount "></span></p>
+
+    
+    <h1 class="text-center">Artist Dashboard</h1>
+
+    <div class="container mx-6 mt-3 ">
+        <div class="card p-5" style="border-radius: 50px 50px 0px 0px ;
+        filter: drop-shadow(0.0rem -0.25rem 0.2rem rgba(102, 102, 102, 0.3));background-color: #ffffff;
+background-image: linear-gradient(180deg,  #16E9E5 0%, #ffffff 90%, #ffffff 100%);
+        "> 
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <input id="artisID" placeholder="Type your Artist ID" class="form-control mt-3" type="text">
+
+            </div> 
+           
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-2">
+            <button id="checkbalartist" class="btn btn-success bg-dark rounded-pill">Check Balance</button>
+        </div> 
+        </div>
+        
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <p id="yourshare"></p>
+                </div>
+                <div class="col-md-6">
+                    <p id="yoursubs"></p>
+                </div>
+                 
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center">
+                    
+                </div>
+            </div>
+
+         <hr>
+            <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p id="yourdonations"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p id="yourdonators"></p>
+                    </div>
+                     
+                </div>
+
+               
+                <div class="row  ">
+                    <div class="col-md-12 ">
+                        <input id="walletInput" placeholder="Enter Wallet Address" class="form-control" style="display: none;">
+                        <p class="mt-3 " id="note" style="display: none;">Link your wallet to receive the donation.</p>
+                        <button id="linkWallet" style="display: none;" class="bg-dark btn btn-success rounded-pill">Link Wallet</button>
+                        <button id="redeemint" style="opacity: 0;" onmouseover="redeeminthover(this)" class="bg-dark btn btn-success rounded-pill">Redeem Interest</button>
+
+                    </div>
+                     
+                     
+                </div>
+    
+                
+            </div>
+    </div>
+
+</body>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<script type="text/javascript" src="scripts/bootstrap-notify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/@portis/web3@2.0.0-beta.56/umd/index.js" integrity="sha256-YglsZuKbHpe2+U4HYCd3juAiADRTU7Ys2AGfCGY+Nmo=" crossorigin="anonymous"> </script>-->
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.11/dist/web3.min.js"></script>
+<!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@compound-finance/compound-js@latest/dist/browser/compound.min.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" charset="utf-8" type="text/javascript"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/@biconomy/mexa@1/dist/mexa.js" type="text/javascript"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+<!--<script src="script.js"></script>-->
+<!--<script src="scripts/animation.js"></script>-->
+<script src="scripts/somedec.js" type="text/javascript"></script>
+<script src="scripts/biconomyapi.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js" type="text/javascript"></script> 
+
+    <script type="text/javascript">
+        var web3;
+        var RemixContract;
+        
+        var  cethbal;
+        var  acc1,tok;
+        
+        var rinkRemixContract = createrinkContract();
+        var donRemixContract = createdonatecnt();
+        var compRemixContract = createcompcnt();
+        var price,price2;
+        //start of compound js calls
+        
+        const compound = new Compound();
+        (async function () { 
+            price = await compound.getPrice(Compound.ETH); 
+            console.log('ETH', price); // 6 decimals, see Open Price Feed docs
+        price2 = await compound.getPrice(Compound.cETH); // supports cTokens too 
+        console.log('ceth', price2); 
+        $("#compoundrates").html("Current Rates : &nbsp; ETH to USD: $"+ price+" &nbsp;&nbsp; cETH to USD: $"+price2); })().catch(console.error);
+
+        async function compcalls(){             // Compound js API call
+            const account = await Compound.api.account({
+            "addresses": "0x93ba13F5958cEf4A4beB2f40E9282012125B329c",
+            "network": "ropsten"      //ropsten selected
+        });
+        
+        
+
+        account.accounts.forEach((acc) => {
+            acc1=acc;
+            //alert(acc); //not alerting
+            acc.tokens.forEach((tok) => {
+                //alert("Check sym"+tok.symbol);
+                if (tok.symbol === Compound.cETH) {
+                    //alert("Ran"+tok.symbol);
+                cethbal = tok.supply_balance_underlying;
+                }
+            });
+        });
+
+        console.log('cethbal',cethbal );
+
+        }
+        compcalls().catch(console.error);
+
+
+        (async function () { //compound js COMP Methods
+            const bal = await Compound.comp.getCompBalance('0x93ba13F5958cEf4A4beB2f40E9282012125B329c');
+            console.log('Balance', bal);
+        })().catch(console.error);
+
+  
+
+        var myStorage = window.localStorage;
+
+        var currentAccount = myStorage.getItem('currentAccount');
+        var promise1,promise2;
+        function redeeminthover(thiselem){
+            var thiselement = thiselem;
+                        
+            if(todayd!=30){
+            $("#redeemint").prop('disabled', true)
+                        
+            $.notify({
+                // options
+                message: 'You can redeem you interest only on 30th of every month.' 
+            },{
+                // settings
+                type: 'danger'
+            });
+            }
+            
+        }   
+        $("#checkbalartist").click(function(){
+            var tbou;
+            var artisid = $("#artisID").val();
+            //alert("artisid"+artisid)
+
+            (async function(){
+            let subcount = await RemixContract.getSubCount(artisid);
+
+            //let exchangerate = await compRemixConract.exchangeRateCurrent();
+            //let web3exchangeRate = (await web3compcnt.methods.exchangeRateCurrent().call()) / 1e18;
+        
+            let ctokenbal = await compRemixContract.balanceOf("0xc5cE61616F18DB25E79eB09D48B8f9b239A4B692");
+            //promise1 = web3exchangeRate;
+            console.log(ctokenbal);
+            //var exchg = exchangerate/1e18;
+            console.log("ceth conversion rinkeby: "+ctokenbal);
+            console.log(artisid+"sub total count: "+subcount);
+            let totalcount = await RemixContract.getallsub();
+            console.log("Total total count:"+totalcount);
+            if(totalcount%8!=0)
+            {
+                totalcount = totalcount - (totalcount%8);
+
+            }
+            
+            console.log("All sub: "+totalcount);
+            totalstake = totalcount*250000000000000000;
+            tbou = viewBou(currentAccount);
+            if(tbou==null)
+            {
+               
+                let c = await rinkRemixContract.viewbou();
+                console.log(c);
+                tbou = c;
+                console.log("View Bou: "+tbou);   
+                totalinterest = tbou - totalstake;
+                //totalinterest = Math.abs(totalinterest);
+                pershare = totalinterest/totalcount;
+                artistshare = subcount*pershare;
+                artistshare = Web3.utils.fromWei(String(artistshare), 'ether');
+                console.log("Your share : "+artistshare);
+                console.log("Total interest: "+totalinterest);
+                console.log("USD PRICE: "+price);
+                var earnedtstring = "You have earned <strong>"+artistshare+"</strong> ETH(s) - <strong> $"+String(parseFloat(artistshare*price).toFixed(4))+"</strong> USD(s).";
+                $("#yourshare").html(earnedtstring);
+            
+                $("#yoursubs").html("You have <strong>"+subcount+"</strong> Subscribers.");
+
+                const etherValue = Web3.utils.fromWei(String(totalinterest), 'ether');
+                console.log(etherValue);
+            }
+            else{
+
+                console.log("View Bou: "+tbou);   
+                totalinterest = tbou - totalstake;
+                //totalinterest = Math.abs(totalinterest);
+                pershare = totalinterest/totalcount;
+                artistshare = subcount*pershare;
+                artistshare = Web3.utils.fromWei(String(artistshare), 'ether');
+                console.log("Your share : "+artistshare);
+                console.log("Total interest: "+totalinterest);
+                var earnedtstring = "You have earned <strong>"+artistshare+"</strong> ETH(s) - <strong> $"+String(parseFloat(artistshare*price).toFixed(4))+"</strong> USD(s).";
+                $("#yourshare").html(earnedtstring);
+                
+                $("#yoursubs").html("You have <strong>"+subcount+"</strong> Subscribers.");
+
+                const etherValue = Web3.utils.fromWei(String(totalinterest), 'ether');
+                console.log(etherValue);
+
+
+                let donation = await donRemixContract.showDonations(String(artisid));
+                const amt = Web3.utils.fromWei(String(donation), 'ether');
+
+                $("#yourdonations").html("You have received a donation of: <strong>"+amt+"</strong> ETH(s)");
+
+
+                 document.querySelector('#linkWallet').style.display="block";
+                 document.querySelector('#walletInput').style.display="block";
+                 document.querySelector('#note').style.display="block";
+
+                
+
+                if (todayd!=14 || todayd!=28){
+
+                }
+                 var isWalletLinked = await donRemixContract.checklinked(artisid);
+
+                 if(!isWalletLinked)
+                 {
+                    $("#walletInput").prop('readonly', false);
+                    $("#linkWallet").html("Link Wallet");
+                    $("#linkWallet").click(async function(){
+                        
+                        let link = await donRemixContract.linkWallet(String($('#walletInput').val()),artisid);
+                        console.log(link);
+                    });
+                 }
+                 else if(isWalletLinked){
+                     
+                    $("#linkWallet").html("Redeem Donation");
+                    $("#redeemint").prop('disabled', false)
+                    $("#redeemint").css("opacity","100%");
+
+                    let walletAddress = await donRemixContract.showAdd(String(artisid));
+
+                    $("#walletInput").val(walletAddress);
+                    $("#walletInput").prop('readonly', true);
+                    $("#note").html("A wallet is already linked to your Artist ID, You can redeem your Donations now.");
+                    $("#linkWallet").click(async function(){
+
+                   let redeemDonation = redeemDonations(walletAddress,artisid); 
+                    });
+                   
+                    $("#redeemint").click(async function(){
+                        tbou = viewBou(currentAccount);
+                        let ctokenbal = await compRemixContract.balanceOf("0xc5cE61616F18DB25E79eB09D48B8f9b239A4B692");
+                        tokenvalue = calculatetoken(tbou,ctokenbal,1.5);
+                        txhash = redeemeth(walletAddress,tokenvalue);
+                        console.log("Redeem Eth in progress hash: ",txhash);
+                        
+                        txhash = sendEther(currentAccount,1500000000000000000);
+                        console.log("Your transaction is being processed : ",txhash);
+                    });
+                 }
+                 
+            }           
+               
+            })().catch(console.log);
+                
+        });
+            //var  txhash = checkBou(currentAccount);
+            //console.log("Check bou: "+txhash);
+            
+            //var receipt = web3.eth.getTransactionReceipt(txhash).then(console.log).catch(console.error);
+           
+              //4001832821050986936
+              //2000000000000000000
+            var txhash = viewbalance(currentAccount);
+
+            console.log(txhash);  
+            //var txhash = redeemeth(currentAccount,7952945481);
+            //console.log(txhash);
+    </script>
+
+    </html>
